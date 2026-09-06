@@ -3,7 +3,7 @@ import Header from "@/components/layout/Header";
 import Navbar from "@/components/layout/Navbar";
 import Footer from "@/components/layout/Footer";
 import Link from "next/link";
-import { Download, ArrowRight, MessageCircle, CheckCircle2 } from "lucide-react";
+import { Download, ArrowRight, MessageCircle } from "lucide-react";
 
 export const metadata = {
   title: "Junior Secondary – Kenya Excellent Centre & School",
@@ -27,8 +27,8 @@ export default function SecondaryPage() {
             Junior Secondary School
           </h1>
           <p className="mb-8 max-w-xl text-base leading-8 text-white/60">
-            KES currently offers Junior Secondary up to Grade 9, following
-            the CBC curriculum and preparing learners for the KJSEA assessment.
+            KES runs Junior Secondary up to Grade 9 on the CBC curriculum.
+            Learners here are working towards the KJSEA assessment.
           </p>
           <div className="flex flex-wrap gap-3">
             <a
@@ -80,19 +80,16 @@ export default function SecondaryPage() {
               <h2 className="hero-title mb-6 text-3xl text-slate-900">
                 How to Join Junior Secondary
               </h2>
-              <div className="space-y-4">
+              <ul className="list-disc space-y-4 pl-5 marker:text-[#d97706]">
                 {[
                   "KPSEA certificate OR pass KES entry assessment",
                   "Duly filled, signed and stamped transfer forms",
                   "Birth certificate (copy)",
                   "Passport-size photo of learner",
                 ].map((req, i) => (
-                  <div key={i} className="flex items-start gap-3">
-                    <CheckCircle2 size={18} className="mt-0.5 shrink-0 text-[#d97706]" />
-                    <p className="text-sm leading-7 text-slate-600">{req}</p>
-                  </div>
+                  <li key={i} className="text-sm leading-7 text-slate-600">{req}</li>
                 ))}
-              </div>
+              </ul>
               <div className="mt-8 rounded-2xl border border-slate-200 bg-[#fffaf2] p-5">
                 <p className="text-sm leading-7 text-slate-600">
                   Visit our office along Approved-Shelleybeach Road, Likoni
@@ -106,13 +103,13 @@ export default function SecondaryPage() {
             </div>
 
             {/* Fee download */}
-            <div className="rounded-3xl border border-[#d97706]/30 bg-[#fffaf2] p-8">
+            <div className="rounded-xl border border-[#d97706]/30 bg-[#fffaf2] p-8">
               <p className="mb-3 text-sm font-bold uppercase tracking-[0.3em] text-[#d97706]">Fees</p>
               <h3 className="hero-title mb-3 text-2xl text-slate-900">Junior Secondary Fee Structure</h3>
               <p className="mb-6 text-sm leading-8 text-slate-600">
-                Download the current fee structure for full details on tuition
-                and payment. Contact the school office for any fee-related
-                enquiries.
+                Download the fee structure for the full breakdown of tuition
+                and payment dates. Call the school office if anything is not
+                clear.
               </p>
               <a
                 href="/docs/secondary-fee-structure.pdf"
@@ -139,12 +136,12 @@ export default function SecondaryPage() {
         <div className="mx-auto max-w-[1400px]">
           <div className="flex flex-col gap-5 md:flex-row md:items-center md:justify-between">
             <div>
-              <h2 className="hero-title mb-2 text-2xl md:text-3xl">Our Alumni Speak for Themselves</h2>
+              <h2 className="hero-title mb-2 text-2xl md:text-3xl">Where Our Leavers Have Gone</h2>
               <p className="max-w-xl text-sm leading-8 text-white/60">
-                KES Junior Secondary graduates have gained entry to competitive
-                national schools including Maranda High School, Nyuki School,
-                Kwale High and Matuga Girls — proof that excellence is possible
-                for every learner at KES.
+                Learners who finished Junior Secondary here have gained places
+                at competitive national schools: Maranda High School, Nyuki
+                School, Kwale High and Matuga Girls. Those places are within
+                reach for the learners sitting in our classrooms now.
               </p>
             </div>
             <div className="flex flex-wrap gap-3">

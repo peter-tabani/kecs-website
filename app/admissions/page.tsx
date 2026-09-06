@@ -3,7 +3,7 @@ import Header from "@/components/layout/Header";
 import Navbar from "@/components/layout/Navbar";
 import Footer from "@/components/layout/Footer";
 import AdmissionsForm from "@/components/sections/AdmissionsForm";
-import { ArrowRight, CheckCircle2, MessageCircle } from "lucide-react";
+import { ArrowRight, MessageCircle } from "lucide-react";
 
 export const metadata = {
   title: "Admissions – Kenya Excellent Centre & School",
@@ -68,12 +68,12 @@ export default function AdmissionsPage() {
             Admissions 
           </p>
           <h1 className="hero-title mb-4 text-4xl font-medium leading-tight md:text-6xl">
-            Begin Your Child's
-            <br className="hidden md:block" /> Journey at KES
+            Apply for a Place
+            <br className="hidden md:block" /> at KES
           </h1>
           <p className="mb-6 max-w-xl text-base leading-8 text-white/80 md:mb-8 md:text-lg">
-            Open for learners from age 3 through Grade 9 in Likoni, Mombasa.
-            Reach us instantly via WhatsApp or fill the form below.
+            We take learners from age 3 up to Grade 9, here in Likoni, Mombasa.
+            WhatsApp us or fill in the form below.
           </p>
 
           {/* Mobile: show WhatsApp CTA prominently in hero */}
@@ -109,7 +109,7 @@ export default function AdmissionsPage() {
               Admission Requirements
             </h2>
             <p className="mt-4 text-base leading-8 text-slate-600">
-              Requirements vary by level. Bring all documents when visiting the school office.
+              Requirements differ by level. Carry all the documents when you come to the school office.
             </p>
           </div>
 
@@ -124,10 +124,9 @@ export default function AdmissionsPage() {
                 <p className="mb-3 text-xs font-bold uppercase tracking-wider text-slate-500">
                   Required Documents
                 </p>
-                <ul className="space-y-2">
+                <ul className="list-disc space-y-2 pl-5 marker:text-[#d97706]">
                   {req.docs.map((doc) => (
-                    <li key={doc} className="flex items-start gap-2 text-sm leading-6 text-slate-700">
-                      <CheckCircle2 size={14} className="mt-0.5 shrink-0 text-[#d97706]" />
+                    <li key={doc} className="text-sm leading-6 text-slate-700">
                       {doc}
                     </li>
                   ))}
@@ -152,8 +151,8 @@ export default function AdmissionsPage() {
               <div className="rounded-2xl border border-slate-200 bg-white p-6 text-left shadow-sm">
                 <p className="mb-1 font-bold text-slate-900">M-Pesa Paybill / Till</p>
                 <p className="text-sm leading-7 text-slate-600">
-                  Pay conveniently via M-Pesa. Contact the school office for
-                  the current Paybill/Till number.
+                  Pay by M-Pesa. Call the school office for the current
+                  Paybill or Till number.
                 </p>
               </div>
               <div className="rounded-2xl border border-slate-200 bg-white p-6 text-left shadow-sm">
@@ -185,8 +184,8 @@ export default function AdmissionsPage() {
               Fill in Your Application
             </h2>
             <p className="mt-4 text-base leading-8 text-slate-600">
-              Complete the form and we'll get back to you within 1–2 business
-              days. On mobile? Use the WhatsApp or Call buttons for instant help.
+              Fill in the form and we will get back to you within 1–2 working
+              days. If you are on your phone, WhatsApp or a call is faster.
             </p>
           </div>
 

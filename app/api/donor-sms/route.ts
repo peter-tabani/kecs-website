@@ -33,7 +33,7 @@ export async function POST(req: Request) {
     );
 
     await client.messages.create({
-      body: `Hello ${name}! 🎓 Welcome to the KES Donor Family. You can now log in to your portal at any time to support our children in Likoni, Mombasa. Thank you for making a difference! — Kenya Excellent Centre & School`,
+      body: `Hello ${name}! 🎓 Welcome to the KES donors. You can sign in to your portal any time to support our children here in Likoni, Mombasa. Asante sana. Kenya Excellent Centre & School`,
       from: process.env.TWILIO_PHONE_NUMBER,
       to: formattedPhone,
     });

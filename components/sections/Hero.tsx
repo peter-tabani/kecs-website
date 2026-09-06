@@ -1,6 +1,12 @@
 import { ArrowRight } from "lucide-react";
 import Link from "next/link";
-import { siteData } from "@/data/site";
+
+const stats = [
+  { value: "250+", label: "Sponsored\nChildren" },
+  { value: "150+", label: "Fee-Paying\nLearners" },
+  { value: "2013", label: "Year\nFounded" },
+  { value: "Gr. 9", label: "Highest\nGrade" },
+];
 
 export default function Hero() {
   return (
@@ -27,18 +33,14 @@ export default function Hero() {
             </h2>
 
             <p className="mb-8 max-w-2xl text-base leading-8 text-white/90 md:text-xl">
-              A private school in Likoni–Shelley Beach, Mombasa, offering a
-              nurturing learning journey from early childhood to junior
-              secondary, grounded in academic excellence, discipline, and moral
-              integrity. Founded in 2013 to serve both sponsored and fee-paying
-              learners alike.
+              A private school in Likoni, Shelley Beach, Mombasa, for both
+              sponsored and fee-paying learners.
             </p>
 
-            <div className="mb-8 flex flex-wrap gap-4">
-              {/* ✅ Links to the full admissions page */}
+            <div className="mb-8 flex flex-wrap gap-3 sm:gap-4">
               <Link
                 href="/admissions"
-                className="inline-flex items-center gap-3 bg-[#d97706] px-7 py-4 text-base font-semibold text-white transition hover:bg-[#b45309]"
+                className="inline-flex items-center gap-3 bg-[#d97706] px-6 py-3.5 text-base font-semibold text-white transition hover:bg-[#b45309] sm:px-7 sm:py-4"
               >
                 Apply for Admission
                 <ArrowRight size={18} />
@@ -46,50 +48,44 @@ export default function Hero() {
 
               <Link
                 href="#programs"
-                className="inline-flex items-center gap-3 border border-white/40 bg-black/20 px-7 py-4 text-base font-semibold text-white transition hover:bg-white/10"
+                className="inline-flex items-center gap-3 border border-white/40 bg-black/20 px-6 py-3.5 text-base font-semibold text-white transition hover:bg-white/10 sm:px-7 sm:py-4"
               >
                 Explore Programs
                 <ArrowRight size={18} />
               </Link>
             </div>
 
-            {/* Motto Banner */}
-            <div className="max-w-2xl rounded-md border border-white/15 bg-white/10 px-5 py-4 backdrop-blur-sm">
-              <p className="text-sm leading-7 text-white/90 md:text-base">
-                <span className="font-semibold text-orange-300">Motto:</span>{" "}
-                <span className="italic">{siteData.motto}</span>
-                
-              </p>
+            {/* Stats — the only place these numbers appear on the site */}
+            <div className="grid grid-cols-4 gap-2 lg:hidden">
+              {stats.map((s) => (
+                <div
+                  key={s.label}
+                  className="rounded-lg border border-white/20 bg-[#0f172a]/75 p-2.5 text-center"
+                >
+                  <p className="text-lg font-bold text-orange-300">{s.value}</p>
+                  <p className="mt-0.5 whitespace-pre-line text-[10px] leading-4 text-white/70">
+                    {s.label}
+                  </p>
+                </div>
+              ))}
             </div>
           </div>
 
-          {/* Stats Panel */}
+          {/* Stats Panel (desktop) */}
           <div className="hidden lg:flex lg:flex-col lg:items-end lg:gap-6">
-            <div className="grid grid-cols-2 gap-4 w-full max-w-xs">
-              <div className="rounded-2xl bg-white/10 border border-white/15 backdrop-blur-sm p-5 text-center">
-                <p className="text-3xl font-bold text-orange-300">250+</p>
-                <p className="mt-1 text-xs text-white/75 leading-5">Sponsored<br/>Children</p>
-              </div>
-              <div className="rounded-2xl bg-white/10 border border-white/15 backdrop-blur-sm p-5 text-center">
-                <p className="text-3xl font-bold text-orange-300">150+</p>
-                <p className="mt-1 text-xs text-white/75 leading-5">Fee-Paying<br/>Learners</p>
-              </div>
-              <div className="rounded-2xl bg-white/10 border border-white/15 backdrop-blur-sm p-5 text-center">
-                <p className="text-3xl font-bold text-orange-300">2013</p>
-                <p className="mt-1 text-xs text-white/75 leading-5">Year<br/>Founded</p>
-              </div>
-              <div className="rounded-2xl bg-white/10 border border-white/15 backdrop-blur-sm p-5 text-center">
-                <p className="text-3xl font-bold text-orange-300">Gr. 9</p>
-                <p className="mt-1 text-xs text-white/75 leading-5">Highest<br/>Grade</p>
-              </div>
+            <div className="grid w-full max-w-xs grid-cols-2 gap-4">
+              {stats.map((s) => (
+                <div
+                  key={s.label}
+                  className="rounded-lg border border-white/20 bg-[#0f172a]/75 p-5 text-center"
+                >
+                  <p className="text-3xl font-bold text-orange-300">{s.value}</p>
+                  <p className="mt-1 whitespace-pre-line text-xs leading-5 text-white/75">
+                    {s.label}
+                  </p>
+                </div>
+              ))}
             </div>
-
-            {/* Play button */}
-            <button className="group relative flex h-20 w-20 items-center justify-center rounded-full bg-white text-[#d97706] shadow-2xl transition hover:scale-105">
-              <span className="absolute inset-[-14px] rounded-full border border-white/40" />
-              <span className="absolute inset-[-28px] rounded-full border border-white/20" />
-              <span className="ml-1 text-xl">▶</span>
-            </button>
           </div>
         </div>
       </div>

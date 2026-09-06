@@ -6,6 +6,7 @@ import {
   ArrowRight, Search, Menu, X, Phone,
   MessageCircle, ChevronRight, GraduationCap,
   BookOpen, Users, Heart, MapPin, FileText, Home,
+  Camera,
 } from "lucide-react";
 import { siteData } from "@/data/site";
 
@@ -13,6 +14,7 @@ const searchIndex = [
   { title: "Home", desc: "Back to the KES homepage", href: "/", icon: <Home size={16} />, tags: ["home", "main", "kes"] },
   { title: "About Us", desc: "School history, vision, mission & leadership", href: "/#about", icon: <BookOpen size={16} />, tags: ["about", "history", "founded", "2013", "director", "noah", "mweruphe", "vision", "mission", "story"] },
   { title: "Admissions", desc: "Apply for ECDE, Primary or Junior Secondary", href: "/admissions", icon: <FileText size={16} />, tags: ["admissions", "apply", "join", "enroll", "register", "application", "form"] },
+  { title: "Photo Gallery", desc: "Browse photos from across the KES community", href: "/gallery", icon: <Camera size={16} />, tags: ["gallery", "photos", "pictures", "images", "camera"] },
   { title: "Primary School", desc: "Grade 1–6, CBC curriculum", href: "/#programs", icon: <GraduationCap size={16} />, tags: ["primary", "grade", "cbc", "curriculum", "grade 1", "grade 2", "grade 3", "grade 4", "grade 5", "grade 6"] },
   { title: "Junior Secondary", desc: "Grade 7–9, KJSEA exams", href: "/#programs", icon: <GraduationCap size={16} />, tags: ["secondary", "junior", "grade 7", "grade 8", "grade 9", "kjsea", "jss"] },
   { title: "ECDE / Pre-Primary", desc: "PP1 and PP2 for children from age 3", href: "/#programs", icon: <GraduationCap size={16} />, tags: ["ecde", "pre-primary", "pp1", "pp2", "nursery", "early childhood", "3 years"] },
@@ -286,7 +288,8 @@ export default function Navbar() {
               { label: "Staff", href: "/login/staff" },
               { label: "Alumni", href: "/login/alumni" },
               { label: "Parents", href: "/login/parents" },
-              
+              { label: "Staff Photo Upload", href: "/admin/login" },
+
             ].map((item) => (
               <Link key={item.label} href={item.href} onClick={() => setDrawerOpen(false)} className="flex items-center justify-between rounded-xl px-4 py-3 text-sm font-medium text-slate-600 hover:bg-slate-50">
                 {item.label}<ChevronRight size={16} className="text-slate-300" />

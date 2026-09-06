@@ -46,7 +46,7 @@ const steps = [
   { num: "2", title: "Get Fee Structure", desc: "Visit our office on Shelleybeach Road, Likoni." },
   { num: "3", title: "Submit Documents", desc: "Bring all required documents for your child's level." },
   { num: "4", title: "Assessment (JSS only)", desc: "Grade 7–9 applicants without KPSEA sit an entry test." },
-  { num: "5", title: "Confirm & Join", desc: "Pay fees and receive your reporting date. Welcome to KES!" },
+  { num: "5", title: "Confirm & Join", desc: "Pay the fees and we give you a reporting date. Karibu KES." },
 ];
 
 type FormState = {
@@ -161,7 +161,7 @@ export default function AdmissionsForm() {
             onClick={() => setStepsOpen((o) => !o)}
             className="flex w-full items-center justify-between px-5 py-4 text-left font-semibold text-slate-900"
           >
-            <span>How to Join KES — 5 Steps</span>
+            <span>How to Join KES: 5 Steps</span>
             {stepsOpen ? <ChevronUp size={18} className="text-[#d97706]" /> : <ChevronDown size={18} className="text-[#d97706]" />}
           </button>
           {stepsOpen && (
@@ -182,7 +182,7 @@ export default function AdmissionsForm() {
         </div>
 
         <p className="mt-5 text-center text-sm text-slate-500">
-          — or fill in the full application form below —
+          Or fill in the full application form below.
         </p>
       </div>
 
@@ -190,7 +190,7 @@ export default function AdmissionsForm() {
       <div className="grid gap-10 lg:grid-cols-[1fr_340px]">
 
         {/* ── Form ── */}
-        <div className="rounded-3xl border border-slate-200 bg-white p-6 shadow-sm lg:p-10">
+        <div className="rounded-xl border border-slate-200 bg-white p-6 shadow-sm lg:p-10">
           {status === "success" ? (
             <div className="flex flex-col items-center py-12 text-center">
               <div className="mb-6 flex h-20 w-20 items-center justify-center rounded-full bg-green-100 text-green-600">
@@ -200,8 +200,8 @@ export default function AdmissionsForm() {
                 Application Submitted!
               </h3>
               <p className="max-w-md text-base leading-8 text-slate-600">
-                Thank you! The KES admissions team will contact you within 1–2
-                business days on{" "}
+                Thank you. The admissions office will get back to you within
+                1–2 working days on{" "}
                 <span className="font-semibold text-slate-800">
                   {form.parent_phone || "your phone"}
                 </span>.
@@ -416,7 +416,7 @@ export default function AdmissionsForm() {
             </div>
             <div>
               <p className="font-bold">Chat on WhatsApp</p>
-              <p className="text-sm text-white/80">Quick response guaranteed</p>
+              <p className="text-sm text-white/80">We usually reply the same day</p>
               <p className="mt-1 text-sm font-semibold">+254 722 916174</p>
             </div>
           </a>
@@ -452,7 +452,7 @@ export default function AdmissionsForm() {
           {/* Desktop: How to Join steps (always visible) */}
           <div className="rounded-2xl border border-slate-200 bg-white p-6 shadow-sm">
             <p className="mb-4 text-sm font-bold uppercase tracking-wider text-slate-500">
-              How to Join — 5 Steps
+              How to Join: 5 Steps
             </p>
             <ol className="space-y-4">
               {steps.map((s) => (
@@ -486,7 +486,7 @@ export default function AdmissionsForm() {
       </div>
 
       {/* ── STICKY BOTTOM BAR — mobile only ── */}
-      <div className="fixed bottom-0 left-0 right-0 z-50 flex border-t border-slate-200 bg-white shadow-2xl lg:hidden">
+      <div className="fixed bottom-0 left-0 right-0 z-50 flex border-t border-slate-200 bg-white shadow-md lg:hidden">
         <a
           href={`https://wa.me/254722916174?text=${whatsappMessage}`}
           target="_blank"

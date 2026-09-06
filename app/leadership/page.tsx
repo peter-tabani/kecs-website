@@ -16,45 +16,45 @@ const leaders = [
     image: "/images/staff/director.png",
     initials: "NM",
     color: "bg-[#0f172a]",
-    bio: "Mr. Noah Mweruphe is the visionary founder and director of the Kenya Excellent Centre and School. Since establishing KES in 2013, he has driven a mission to provide quality education to both fee-paying and sponsored learners from disadvantaged backgrounds. Under his leadership, the school has grown from 30 students to over 400 learners, with alumni gaining entry to some of Kenya's most competitive national schools.",
-    quote: "Education is the greatest equalizer. Our doors are open to every child — regardless of their background.",
+    bio: "Mr. Noah Mweruphe founded the Kenya Excellent Centre and School in 2013 and still runs it day to day. He set out to teach fee-paying children and sponsored children from poor homes in the same classrooms. The school has grown from 30 students to over 400 learners, and its alumni now sit in some of Kenya's most competitive national schools.",
+    quote: "Education is the greatest equaliser. Our doors are open to every child, whatever their background.",
     phone: "+254 722 916174",
     email: "excellentkenya@gmail.com",
     featured: true,
   },
   {
     name: "Mr. Julius Mwaro",
-    role: "Head of Institution — Primary School",
+    role: "Head of Institution, Primary School",
     tag: "Primary School",
     image: "/images/staff/mwaro.png",
     initials: "JM",
     color: "bg-[#d97706]",
-    bio: "Mr. Julius Mwaro leads the Primary School (Grade 1–6), overseeing the implementation of the Competency-Based Curriculum (CBC) and ensuring every learner achieves their full potential. He is committed to creating a structured, nurturing environment where academic excellence and strong character development go hand in hand.",
-    quote: "A strong primary foundation is the launchpad for everything a child will achieve in life.",
+    bio: "Mr. Julius Mwaro heads the Primary School (Grade 1–6). He runs the CBC timetable, keeps track of how each class is progressing, and works with the teachers on marking and remedial lessons. He is strict about routine, and parents hear from him early when a child starts slipping.",
+    quote: "Get primary right and the rest of school becomes far easier for the child.",
     phone: "+254 722 916174",
     email: "excellentkenya@gmail.com",
   },
   {
     name: "Mr. Idd Amani",
-    role: "Head of Institution — Junior Secondary",
+    role: "Head of Institution, Junior Secondary",
     tag: "Junior Secondary",
     image: "/images/staff/idd.png",
     initials: "IA",
     color: "bg-[#0f172a]",
-    bio: "Mr. Idd Amani leads the Junior Secondary School (Grade 7–9), preparing learners for the Kenya Junior Secondary Education Assessment (KJSEA). His focus is on developing critical thinkers and responsible young adults who are ready for the next stage of their academic journey.",
-    quote: "Junior secondary is where young people discover who they are. Our job is to give them the tools to become who they want to be.",
+    bio: "Mr. Idd Amani heads the Junior Secondary School (Grade 7–9) and prepares learners for the Kenya Junior Secondary Education Assessment (KJSEA). Subject choices, revision timetables and the discipline of the older learners all come through his office. This is the age where a child can go either way, and he watches it closely.",
+    quote: "Junior secondary is where young people work out who they are. Our job is to keep them steady while they do it.",
     phone: "+254 722 916174",
     email: "excellentkenya@gmail.com",
   },
   {
     name: "Md. Phoebe N. Mulama",
-    role: "Head of Institution — Early Years",
+    role: "Head of Institution, Early Years",
     tag: "ECDE",
     image: "/images/staff/pheobe.png",
     initials: "PM",
     color: "bg-[#d97706]",
-    bio: "Md. Phoebe N. Mulama leads the Early Years Education (ECDE) department, nurturing children from age 3 through PP1 and PP2. She creates a warm, stimulating environment where the youngest learners develop confidence, social skills, and a love for learning that carries them through their entire school journey.",
-    quote: "The early years shape everything. Every smile, every discovery, every small step matters deeply.",
+    bio: "Md. Phoebe N. Mulama heads Early Years Education (ECDE), taking children from age 3 through PP1 and PP2. For most of them this is the first time away from home, so her first job is simply settling them. Letters, numbers, play and learning to share a classroom follow from there.",
+    quote: "A child who enjoys school at four will still be enjoying it at fourteen.",
     phone: "+254 722 916174",
     email: "excellentkenya@gmail.com",
   },
@@ -65,8 +65,8 @@ const leaders = [
     image: "/images/staff/mazera.png",
     initials: "MD",
     color: "bg-[#0f172a]",
-    bio: "Mr. Mazera Dena serves as Academic Master at KES, overseeing academic programmes across all levels. He coordinates curriculum delivery, monitors learner performance, and ensures teaching standards remain high. His work is central to KES consistently producing competitive results at sub-county and national levels.",
-    quote: "Academic excellence is not about pressure — it is about building a culture where every learner believes they can achieve.",
+    bio: "Mr. Mazera Dena is the Academic Master, responsible for academic programmes at every level. He draws up the schemes of work, sits in on lessons, and goes through the exam results with teachers at the end of each term. The results KES posts at sub-county and national level come out of that work.",
+    quote: "Good results do not come from pressure. They come from a learner who believes the work is within reach.",
     phone: "+254 722 916174",
     email: "excellentkenya@gmail.com",
   },
@@ -88,7 +88,7 @@ function LeaderModal({ leader, onClose }: { leader: Leader; onClose: () => void 
   return (
     <div className="fixed inset-0 z-50 flex items-end bg-black/60" onClick={onClose}>
       <div
-        className="relative w-full max-h-[88vh] overflow-y-auto rounded-t-3xl bg-white shadow-2xl"
+        className="relative w-full max-h-[88vh] overflow-y-auto rounded-t-xl bg-white shadow-md"
         onClick={(e) => e.stopPropagation()}
       >
         <div className="flex justify-center pt-3 pb-1">
@@ -107,9 +107,9 @@ function LeaderModal({ leader, onClose }: { leader: Leader; onClose: () => void 
         </div>
         <div className="px-6 pb-10 space-y-5">
           <p className="text-sm leading-8 text-slate-600">{leader.bio}</p>
-          <div className="rounded-2xl border-l-4 border-[#d97706] bg-[#fffaf2] px-5 py-4">
+          <div className="rounded-2xl border border-[#d97706]/30 bg-[#fffaf2] px-5 py-4">
             <p className="text-sm italic leading-8 text-slate-700">&ldquo;{leader.quote}&rdquo;</p>
-            <p className="mt-2 text-xs font-bold text-[#d97706]">— {leader.name}</p>
+            <p className="mt-2 text-xs font-bold text-[#d97706]">{leader.name}</p>
           </div>
           <button onClick={onClose} className="w-full rounded-full bg-[#0f172a] py-3.5 text-sm font-bold text-white">
             Close
@@ -139,7 +139,7 @@ export default function LeadershipPage() {
           <p className="mb-3 text-sm font-bold uppercase tracking-[0.3em] text-[#d97706]">Our People</p>
           <h1 className="hero-title mb-3 text-4xl font-medium leading-tight md:text-5xl">The Team Behind KES</h1>
           <p className="max-w-xl text-base leading-8 text-white/60">
-            Meet the dedicated leaders committed to providing quality education and care to every learner at Kenya Excellent Centre and School.
+            The people who run Kenya Excellent Centre and School day to day, and who you will deal with when you bring your child here.
           </p>
         </div>
       </section>
@@ -147,7 +147,7 @@ export default function LeadershipPage() {
       {/* ── DESKTOP: Full cards ── */}
       <section className="hidden bg-[#fffaf2] px-4 py-16 lg:block lg:px-6">
         <div className="mx-auto max-w-[1400px]">
-          <div className="mb-12 overflow-hidden rounded-3xl border border-slate-200 bg-white shadow-sm">
+          <div className="mb-12 overflow-hidden rounded-xl border border-slate-200 bg-white shadow-sm">
             <div className="grid lg:grid-cols-[340px_1fr]">
               <div className={`${director.color} flex flex-col items-center justify-center gap-5 px-8 py-12 text-center`}>
                 <Avatar image={director.image} initials={director.initials} color="bg-[#1e293b]" name={director.name} size="lg" />
@@ -167,9 +167,9 @@ export default function LeadershipPage() {
               </div>
               <div className="flex flex-col justify-center px-10 py-12">
                 <p className="mb-6 text-base leading-9 text-slate-600">{director.bio}</p>
-                <div className="rounded-2xl border-l-4 border-[#d97706] bg-[#fffaf2] px-6 py-5">
+                <div className="rounded-2xl border border-[#d97706]/30 bg-[#fffaf2] px-6 py-5">
                   <p className="text-base italic leading-8 text-slate-700">&ldquo;{director.quote}&rdquo;</p>
-                  <p className="mt-3 text-xs font-bold text-[#d97706]">— {director.name}</p>
+                  <p className="mt-3 text-xs font-bold text-[#d97706]">{director.name}</p>
                 </div>
               </div>
             </div>
@@ -181,7 +181,7 @@ export default function LeadershipPage() {
           </div>
           <div className="grid gap-6 md:grid-cols-2">
             {team.map((member) => (
-              <div key={member.name} className="overflow-hidden rounded-3xl border border-slate-200 bg-white shadow-sm transition hover:-translate-y-1 hover:shadow-md">
+              <div key={member.name} className="overflow-hidden rounded-xl border border-slate-200 bg-white shadow-sm transition hover:border-[#d97706] hover:shadow-md">
                 <div className={`${member.color} flex items-center gap-5 px-7 py-6`}>
                   <Avatar image={member.image} initials={member.initials} color={member.color === "bg-[#d97706]" ? "bg-[#b45309]" : "bg-[#1e293b]"} name={member.name} size="md" />
                   <div>
@@ -192,7 +192,7 @@ export default function LeadershipPage() {
                 </div>
                 <div className="px-7 py-6">
                   <p className="mb-5 text-sm leading-8 text-slate-600">{member.bio}</p>
-                  <div className="rounded-xl border-l-4 border-[#d97706] bg-[#fffaf2] px-5 py-4">
+                  <div className="rounded-xl border border-[#d97706]/30 bg-[#fffaf2] px-5 py-4">
                     <p className="text-sm italic leading-7 text-slate-700">&ldquo;{member.quote}&rdquo;</p>
                   </div>
                 </div>
@@ -273,7 +273,7 @@ export default function LeadershipPage() {
           <div className="flex flex-col gap-5 md:flex-row md:items-center md:justify-between">
             <div>
               <h2 className="hero-title mb-1 text-2xl md:text-3xl">Want to join our team?</h2>
-              <p className="text-sm text-white/60">KES is always looking for passionate educators who believe in our mission.</p>
+              <p className="text-sm text-white/60">We are always looking for good teachers. Send your CV to the director.</p>
             </div>
             <div className="flex flex-wrap gap-3">
               <a href="mailto:excellentkenya@gmail.com?subject=Teaching Position Enquiry" className="inline-flex items-center gap-2 rounded-full bg-[#d97706] px-6 py-3 text-sm font-bold text-white hover:bg-[#b45309] transition">

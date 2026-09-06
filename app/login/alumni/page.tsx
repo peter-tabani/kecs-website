@@ -5,13 +5,7 @@ import Link from "next/link";
 
 export default function StaffLogin() {
   return (
-    <div 
-      className="flex min-h-screen items-center justify-center bg-[#f4f4f4]"
-      style={{ 
-        backgroundImage: 'radial-gradient(#d4d4d4 1px, transparent 1px)', 
-        backgroundSize: '12px 12px' 
-      }}
-    >
+    <div className="flex min-h-screen items-center justify-center bg-[#f4f4f4]">
       <div className="w-full max-w-[450px] px-4">
         
         {/* Main Login Card */}

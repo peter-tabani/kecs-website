@@ -5,9 +5,8 @@ import { useRouter } from "next/navigation";
 import { useEffect, useState } from "react";
 import Link from "next/link";
 import {
-  Heart, LogOut, GraduationCap, Building2,
+  Heart, LogOut,
   Newspaper, ArrowRight, CheckCircle2,
-  Monitor, Trophy, Hammer, Users,
   MessageCircle, Mail,
 } from "lucide-react";
 
@@ -31,43 +30,36 @@ function getFirstName(name: string | null | undefined): string {
 const donationOptions = [
   {
     id: "sponsor",
-    icon: <Heart size={26} />,
     title: "Sponsor a Child",
-    desc: "Cover a child's full education — meals, uniform, supplies & tuition.",
+    desc: "Covers one child's schooling: meals, uniform, supplies and tuition.",
     amounts: ["$10 / mo", "$25 / mo", "$50 / mo"],
     color: "border-[#d97706]/30 bg-[#fffaf2]",
-    iconBg: "bg-[#d97706]/10 text-[#d97706]",
   },
   {
     id: "school",
-    icon: <Building2 size={26} />,
     title: "Donate to the School",
-    desc: "Support the school's general fund — facilities, equipment & growth.",
+    desc: "Goes to the general fund for buildings, equipment and repairs.",
     amounts: ["$25", "$50", "$100", "$250"],
     color: "border-slate-200 bg-white",
-    iconBg: "bg-[#0f172a]/10 text-[#0f172a]",
   },
 ];
 
 const news = [
   {
-    icon: <Hammer size={18} />,
     tag: "Expansion",
     title: "Plans for New Classrooms Underway",
     date: "March 2025",
-    body: "As enrolment grows, KES is planning to add 4 new classrooms. The director is actively seeking donor support to make this a reality in 2025.",
+    body: "Enrolment keeps rising and the classes are full. KES plans to put up 4 more classrooms, and the director is looking for donors to fund them in 2025.",
     urgent: true,
   },
   {
-    icon: <Monitor size={18} />,
     tag: "Technology",
-    title: "Computer Lab Upgrade — Goal: 20 New Computers",
+    title: "Computer Lab Upgrade: 20 Machines Needed",
     date: "February 2025",
     body: "Our current lab has 8 computers for 400+ learners. We are fundraising to add 12 more machines and upgrade internet access.",
     urgent: false,
   },
   {
-    icon: <Trophy size={18} />,
     tag: "Achievement",
     title: "KES Students Top Sub-County in Scouting & Academics",
     date: "January 2025",
@@ -75,11 +67,10 @@ const news = [
     urgent: false,
   },
   {
-    icon: <Users size={18} />,
     tag: "Vision",
-    title: "Sports Facilities — Building a Real Athletics Track",
+    title: "Sports Facilities: Building a Proper Athletics Track",
     date: "December 2024",
-    body: "KES is highly competitive in athletics and Taekwondo. The school vision is to build a proper athletics track and expand sports facilities.",
+    body: "KES does well in athletics and Taekwondo, though we still train on open ground. The plan is to lay a proper track and add more sports facilities.",
     urgent: false,
   },
 ];
@@ -159,10 +150,10 @@ export default function DonorDashboard() {
         {/* ── Greeting ── */}
         <div className="mb-8">
           <h1 className="hero-title text-3xl text-slate-900">
-            {greeting}, {firstName}! 👋
+            {greeting}, {firstName}!
           </h1>
           <p className="mt-1 text-sm text-slate-500">
-            Thank you for being part of the KES family. Here is how you can help today.
+            Thank you for standing with KES. Here is where help is needed today.
           </p>
         </div>
 
@@ -191,9 +182,6 @@ export default function DonorDashboard() {
               <div className="grid gap-4 sm:grid-cols-2">
                 {donationOptions.map((opt) => (
                   <div key={opt.id} className={`rounded-2xl border-2 p-6 ${opt.color}`}>
-                    <div className={`mb-4 flex h-12 w-12 items-center justify-center rounded-full ${opt.iconBg}`}>
-                      {opt.icon}
-                    </div>
                     <h3 className="mb-1 font-bold text-slate-900">{opt.title}</h3>
                     <p className="mb-5 text-sm leading-7 text-slate-500">{opt.desc}</p>
                     <div className="mb-4 flex flex-wrap gap-2">
@@ -228,9 +216,6 @@ export default function DonorDashboard() {
                     className={`rounded-2xl border bg-white p-5 shadow-sm ${item.urgent ? "border-[#d97706]/40" : "border-slate-200"}`}
                   >
                     <div className="mb-3 flex items-center gap-2">
-                      <div className={`flex h-7 w-7 items-center justify-center rounded-full ${item.urgent ? "bg-[#d97706]/10 text-[#d97706]" : "bg-slate-100 text-slate-500"}`}>
-                        {item.icon}
-                      </div>
                       <span className={`rounded-full px-2.5 py-0.5 text-xs font-bold uppercase tracking-wider ${item.urgent ? "bg-[#d97706] text-white" : "bg-slate-100 text-slate-500"}`}>
                         {item.tag}
                       </span>
@@ -255,9 +240,6 @@ export default function DonorDashboard() {
           {/* ── Right Sidebar ── */}
           <div className="space-y-5">
             <div className="rounded-2xl border border-slate-200 bg-white p-6 shadow-sm">
-              <div className="mb-4 flex h-10 w-10 items-center justify-center rounded-full bg-[#d97706]/10 text-[#d97706]">
-                <GraduationCap size={20} />
-              </div>
               <h3 className="mb-3 font-bold text-slate-900">What Your Gift Does</h3>
               <ul className="space-y-3">
                 {[

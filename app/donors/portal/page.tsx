@@ -176,7 +176,6 @@ export default function DonorPortalPage() {
 
       {/* ── Left Branding Panel ── */}
       <div className="relative hidden flex-col justify-between overflow-hidden bg-[#0f172a] p-12 lg:flex lg:w-[42%]">
-        <div className="absolute inset-0 opacity-5" style={{ backgroundImage: "radial-gradient(circle at 2px 2px, #d97706 1px, transparent 0)", backgroundSize: "32px 32px" }} />
         <Link href="/" className="relative flex items-center gap-3">
           <div className="flex h-10 w-10 items-center justify-center rounded-full border-2 border-[#d97706] text-sm font-bold text-[#d97706]">K</div>
           <div>
@@ -185,16 +184,13 @@ export default function DonorPortalPage() {
           </div>
         </Link>
         <div className="relative">
-          <div className="mb-5 flex h-14 w-14 items-center justify-center rounded-full bg-[#d97706]/20 text-[#d97706]">
-            <Heart size={28} />
-          </div>
           <h1 className="hero-title mb-4 text-4xl font-medium leading-tight text-white">
             Your giving<br />
             <span className="text-[#d97706]">changes lives</span><br />
             in Likoni.
           </h1>
           <p className="mb-8 text-base leading-8 text-white/55">
-            Join our community of donors helping children access quality education regardless of their background.
+            Our donors pay the fees, meals and uniforms of children in Likoni who would otherwise be out of school.
           </p>
           <div className="grid grid-cols-3 gap-3">
             {[
@@ -227,14 +223,11 @@ export default function DonorPortalPage() {
 
           {/* Existing account notice */}
           {existingAccount && (
-            <div className="mb-5 flex items-start gap-3 rounded-2xl border border-[#d97706]/30 bg-[#fffaf2] p-4">
-              <CheckCircle2 size={18} className="mt-0.5 shrink-0 text-[#d97706]" />
-              <div>
-                <p className="text-sm font-bold text-slate-900">Welcome back! 👋</p>
-                <p className="text-xs leading-6 text-slate-600">
-                  You already have an account. We have switched you to sign in — just enter your password below.
-                </p>
-              </div>
+            <div className="mb-5 rounded-2xl border border-[#d97706]/30 bg-[#fffaf2] p-4">
+              <p className="text-sm font-bold text-slate-900">Welcome back!</p>
+              <p className="text-xs leading-6 text-slate-600">
+                You already have an account, so we have moved you to sign in. Enter your password below.
+              </p>
             </div>
           )}
 
@@ -369,7 +362,7 @@ export default function DonorPortalPage() {
                     </div>
 
                     <div className="rounded-xl bg-slate-50 px-4 py-3 text-xs leading-6 text-slate-500">
-                      💡 You can register with <strong>email</strong>, <strong>phone</strong>, or <strong>both</strong>. At least one is required.
+                      You can register with <strong>email</strong>, <strong>phone</strong>, or <strong>both</strong>. At least one is required.
                     </div>
 
                     <div>

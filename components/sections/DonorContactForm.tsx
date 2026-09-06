@@ -72,7 +72,7 @@ export default function DonorContactForm() {
 
   if (status === "success") {
     return (
-      <div className="flex flex-col items-center rounded-3xl border border-slate-200 bg-white p-10 text-center shadow-sm">
+      <div className="flex flex-col items-center rounded-xl border border-slate-200 bg-white p-10 text-center shadow-sm">
         <div className="mb-6 flex h-20 w-20 items-center justify-center rounded-full bg-green-100 text-green-600">
           <CheckCircle2 size={40} />
         </div>
@@ -94,7 +94,7 @@ export default function DonorContactForm() {
   }
 
   return (
-    <div className="rounded-3xl border border-slate-200 bg-white p-8 shadow-sm lg:p-10">
+    <div className="rounded-xl border border-slate-200 bg-white p-8 shadow-sm lg:p-10">
       <h3 className="hero-title mb-6 text-2xl text-slate-900">Send a Message</h3>
 
       <form onSubmit={submit} className="space-y-5">

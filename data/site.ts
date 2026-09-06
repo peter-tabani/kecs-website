@@ -29,7 +29,8 @@ export const siteData = {
     { label: "Primary", href: "/primary" },
     { label: "Secondary", href: "/secondary" },
     { label: "Admissions", href: "/admissions" }, // ✅ full page
-    { label: "School Life", href: "#why-kecs" },
+    { label: "Gallery", href: "/gallery" },
+    { label: "School Life", href: "/#why-kecs" },
     { label: "Contact", href: "#contact" },
   ],
 };

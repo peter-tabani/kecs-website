@@ -15,7 +15,7 @@ const playfair = Playfair_Display({
 
 export const metadata: Metadata = {
   title: "Kenya Excellent Centre and School",
-  description: "Private school in Likoni, Mombasa — Natuwe Mbele Daima",
+  description: "Private school in Likoni, Mombasa. Natuwe Mbele Daima",
 };
 
 export default function RootLayout({

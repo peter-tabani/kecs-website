@@ -5,15 +5,11 @@ import Footer from "@/components/layout/Footer";
 import Hero from "@/components/sections/Hero";
 import About from "@/components/sections/About";
 import Programs from "@/components/sections/Programs";
-import {
-  ArrowRight,
-  ShieldCheck,
-  Bus,
-  Monitor,
-  Music,
-  FlaskConical,
-  BookHeart,
-} from "lucide-react";
+import GalleryPreview from "@/components/sections/GalleryPreview";
+import SectionBanner from "@/components/ui/SectionBanner";
+import SwipeRow from "@/components/ui/SwipeRow";
+import Link from "next/link";
+import { ArrowRight } from "lucide-react";
 
 export default function HomePage() {
   return (
@@ -24,123 +20,75 @@ export default function HomePage() {
       <Hero />
       <About />
       <Programs />
+      <GalleryPreview />
 
       {/* Why Choose KES */}
-      <section id="why-kecs" className="bg-white py-20">
-        <div className="mx-auto max-w-[1400px] px-4 lg:px-6">
-          <div className="mb-12 max-w-3xl">
-            <p className="mb-3 text-sm font-semibold uppercase tracking-[0.25em] text-[#d97706]">
-              Why Choose KES
-            </p>
-            <h3 className="hero-title text-4xl leading-tight text-slate-900 md:text-5xl">
-              A School Experience Built Around Learning, Care, and Support
-            </h3>
-          </div>
-
-          <div className="grid gap-6 md:grid-cols-2 xl:grid-cols-3">
-            <div className="rounded-2xl border border-slate-200 p-6">
-              <div className="mb-4 text-[#d97706]">
-                <ShieldCheck size={24} />
+      <section id="why-kecs" className="bg-white pb-16 lg:pb-20">
+        <SectionBanner
+          image="/images/programs/junior.jpg"
+          eyebrow="Why Choose KES"
+          title="What Your Child Gets Here"
+          height="h-[180px] md:h-[240px]"
+        />
+        <div className="mx-auto max-w-[1400px] px-4 pt-10 lg:px-6 lg:pt-14">
+          <SwipeRow desktopGrid="lg:grid-cols-3">
+            {[
+              {
+                title: "Discipline & Integrity",
+                body: "We hold learners to a high standard of behaviour and honesty, and we follow it up daily rather than only talking about it.",
+              },
+              {
+                title: "School Transport",
+                body: "A school bus and van service runs daily, so getting your child to and from school is one less thing to arrange.",
+              },
+              {
+                title: "ICT & Online Research",
+                body: "A computer lab and an Online Research Centre where learners can do their own research and get used to working on a computer.",
+              },
+              {
+                title: "Science Lab",
+                body: "An equipped science laboratory, so learners actually run experiments instead of only reading about them.",
+              },
+              {
+                title: "Talent Development",
+                body: "A music room, athletics, Taekwondo and Scouting. Plenty of children find what they are good at outside the classroom.",
+              },
+              {
+                title: "Guidance & Counselling",
+                body: "A counsellor learners can talk to. Problems at home or with friends affect schoolwork, and we would rather know early.",
+              },
+            ].map((item) => (
+              <div key={item.title} className="h-full rounded-xl border border-slate-200 p-6">
+                <h4 className="mb-3 text-xl font-semibold">{item.title}</h4>
+                <p className="leading-8 text-slate-600">{item.body}</p>
               </div>
-              <h4 className="mb-3 text-xl font-semibold">Discipline & Integrity</h4>
-              <p className="leading-8 text-slate-600">
-                High standards of discipline, hard work, and integrity are at
-                the heart of daily school life at KES.
-              </p>
-            </div>
-
-            <div className="rounded-2xl border border-slate-200 p-6">
-              <div className="mb-4 text-[#d97706]">
-                <Bus size={24} />
-              </div>
-              <h4 className="mb-3 text-xl font-semibold">School Transport</h4>
-              <p className="leading-8 text-slate-600">
-                Reliable school bus/van service available to ensure safe and
-                convenient daily commuting for learners.
-              </p>
-            </div>
-
-            <div className="rounded-2xl border border-slate-200 p-6">
-              <div className="mb-4 text-[#d97706]">
-                <Monitor size={24} />
-              </div>
-              <h4 className="mb-3 text-xl font-semibold">ICT & Online Research</h4>
-              <p className="leading-8 text-slate-600">
-                A computer lab and dedicated Online Research Centre give
-                learners access to digital learning tools.
-              </p>
-            </div>
-
-            <div className="rounded-2xl border border-slate-200 p-6">
-              <div className="mb-4 text-[#d97706]">
-                <FlaskConical size={24} />
-              </div>
-              <h4 className="mb-3 text-xl font-semibold">Science Lab</h4>
-              <p className="leading-8 text-slate-600">
-                Hands-on science experiments through our equipped science
-                laboratory support curiosity and STEM learning.
-              </p>
-            </div>
-
-            <div className="rounded-2xl border border-slate-200 p-6">
-              <div className="mb-4 text-[#d97706]">
-                <Music size={24} />
-              </div>
-              <h4 className="mb-3 text-xl font-semibold">Talent Development</h4>
-              <p className="leading-8 text-slate-600">
-                Music room, athletics, Taekwondo, and Scouting help learners
-                discover and grow their unique talents.
-              </p>
-            </div>
-
-            <div className="rounded-2xl border border-slate-200 p-6">
-              <div className="mb-4 text-[#d97706]">
-                <BookHeart size={24} />
-              </div>
-              <h4 className="mb-3 text-xl font-semibold">Guidance & Counselling</h4>
-              <p className="leading-8 text-slate-600">
-                Dedicated counselling support ensures every learner's
-                emotional wellbeing is cared for alongside academics.
-              </p>
-            </div>
-          </div>
+            ))}
+          </SwipeRow>
         </div>
       </section>
 
       {/* Admissions CTA */}
-      <section id="admissions" className="bg-[#0f172a] py-20 text-white">
+      <section id="admissions" className="bg-[#0f172a] py-16 text-white lg:py-20">
         <div className="mx-auto max-w-[1400px] px-4 lg:px-6">
-          <div className="rounded-3xl bg-white/5 px-8 py-12 backdrop-blur-sm lg:flex lg:items-center lg:justify-between">
+          <div className="rounded-xl bg-white/5 px-6 py-10 lg:flex lg:items-center lg:justify-between lg:px-8 lg:py-12">
             <div className="max-w-3xl">
               <p className="mb-3 text-sm font-semibold uppercase tracking-[0.25em] text-orange-300">
                 Admissions
               </p>
               <h3 className="hero-title mb-5 text-4xl leading-tight md:text-5xl">
-                Begin Your Child's Journey at KES
+                Bring Your Child to KES
               </h3>
-              <div className="space-y-3 text-base leading-8 text-white/85">
-                <p>
-                  Admissions are open for learners joining ECDE (from age 3),
-                  Primary (Grade 1–6), and Junior Secondary (Grade 7–9).
-                </p>
-                <p>
-                  <span className="font-semibold text-white">Requirements:</span>{" "}
-                  For ECDE, learners must be 3 years and above. Transfer
-                  students must provide duly filled, signed, and stamped forms.
-                  Junior Secondary applicants must present a KPSEA certificate
-                  or pass an entry exam.
-                </p>
-                <p>
-                  <span className="font-semibold text-white">How to apply:</span>{" "}
-                  Visit the main office along Approved-Shelleybeach Road, Likoni,
-                  to obtain the fee structure and admission details. You can also
-                  call us directly.
-                </p>
-                <p>
-                  <span className="font-semibold text-white">Payment:</span>{" "}
-                  Fees accepted via M-Pesa Paybill or Bank deposit.
-                </p>
-              </div>
+              <p className="mb-6 text-base leading-8 text-white/85">
+                We are admitting learners into ECDE (from age 3), Primary
+                (Grade 1-6) and Junior Secondary (Grade 7-9). Call us, or read
+                the requirements and fee details on the admissions page.
+              </p>
+              <Link
+                href="/admissions"
+                className="inline-flex items-center gap-2 text-sm font-bold text-orange-300 hover:text-orange-200"
+              >
+                See admission requirements <ArrowRight size={15} />
+              </Link>
             </div>
 
             <div className="mt-8 flex flex-col gap-3 lg:mt-0 lg:items-end">

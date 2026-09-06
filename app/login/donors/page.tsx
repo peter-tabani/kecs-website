@@ -6,7 +6,7 @@ import Link from "next/link";
 export default function DonorsLogin() {
   return (
     <div className="flex min-h-screen items-center justify-center bg-[#f8f4ea] p-4">
-      <div className="w-full max-w-md rounded-3xl bg-white p-8 shadow-xl">
+      <div className="w-full max-w-md rounded-xl bg-white p-8 shadow-xl">
         
         {/* Back Navigation */}
         <Link

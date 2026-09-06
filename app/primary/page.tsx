@@ -27,8 +27,8 @@ export default function PrimaryPage() {
             Primary School
           </h1>
           <p className="mb-8 max-w-xl text-base leading-8 text-white/60">
-            A CBC-based programme at KES, Likoni — nurturing learners from
-            Grade 1 through Grade 6 in a disciplined, supportive environment.
+            Grade 1 to Grade 6 at KES, Likoni, on the CBC curriculum. Firm
+            routine, small classes, and teachers who know every child by name.
           </p>
           <div className="flex flex-wrap gap-3">
             <a
@@ -55,7 +55,7 @@ export default function PrimaryPage() {
             {[
               { label: "Grades", value: "Grade 1 – 6" },
               { label: "Curriculum", value: "CBC (Competency-Based)" },
-              { label: "School Type", value: "Day School — Mixed" },
+              { label: "School Type", value: "Day School (Mixed)" },
               { label: "Location", value: "Likoni – Shelley Beach, Mombasa" },
               { label: "School Hours", value: "6:00 AM – 6:00 PM" },
               { label: "Enquiries", value: "+254 722 916174" },
@@ -76,9 +76,9 @@ export default function PrimaryPage() {
             <p className="mb-3 text-sm font-bold uppercase tracking-[0.3em] text-[#d97706]">Fees</p>
             <h2 className="hero-title mb-4 text-3xl text-slate-900 md:text-4xl">Primary Fee Structure</h2>
             <p className="mb-8 text-base leading-8 text-slate-600">
-              Download the current fee structure document for full details on
-              tuition and payment. You can also contact the school office
-              directly for any fee-related enquiries.
+              Download the fee structure for the full breakdown of tuition and
+              payment dates. For anything it does not cover, call the school
+              office and ask.
             </p>
             <div className="flex flex-col gap-3 sm:flex-row sm:justify-center">
               <a

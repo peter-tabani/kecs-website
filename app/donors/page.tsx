@@ -6,15 +6,8 @@ import Footer from "@/components/layout/Footer";
 import DonorContactForm from "@/components/sections/DonorContactForm";
 import {
   Heart,
-  Users,
-  GraduationCap,
   ArrowRight,
-  BookOpen,
-  Shirt,
-  Building2,
-  Star,
   Globe,
-  ShieldCheck,
   Mail,
 } from "lucide-react";
 
@@ -25,10 +18,10 @@ export const metadata = {
 };
 
 const impactStats = [
-  { number: "250+", label: "Sponsored Children", icon: <Heart size={22} /> },
-  { number: "2013", label: "Year Founded", icon: <Star size={22} /> },
-  { number: "150+", label: "Fee-Paying Learners", icon: <Users size={22} /> },
-  { number: "10+", label: "National School Alumni", icon: <GraduationCap size={22} /> },
+  { number: "250+", label: "Sponsored Children" },
+  { number: "2013", label: "Year Founded" },
+  { number: "150+", label: "Fee-Paying Learners" },
+  { number: "10+", label: "National School Alumni" },
 ];
 
 const tiers = [
@@ -38,7 +31,6 @@ const tiers = [
     amountKes: "≈ KES 1,300",
     description:
       "Covers exercise books, pens, pencils and basic stationery for one child for a full month.",
-    icon: <BookOpen size={24} />,
     color: "border-orange-200 bg-orange-50",
     badge: "bg-[#d97706] text-white",
     items: ["Exercise books", "Pens & pencils", "A ruler & eraser", "A school bag"],
@@ -48,20 +40,17 @@ const tiers = [
     amount: "$25 / month",
     amountKes: "≈ KES 3,200",
     description:
-      "Provides a full school uniform and daily meals so a child can focus on learning.",
-    icon: <Shirt size={24} />,
+      "A full school uniform, plus breakfast and lunch on every school day.",
     color: "border-slate-200 bg-white",
     badge: "bg-[#0f172a] text-white",
     items: ["Full school uniform", "Daily breakfast & lunch", "School shoes", "PE kit"],
-    featured: true,
   },
   {
     name: "Full Sponsorship",
     amount: "$50 / month",
     amountKes: "≈ KES 6,500",
     description:
-      "Completely covers one child's education — tuition, meals, uniform, supplies and more.",
-    icon: <GraduationCap size={24} />,
+      "Covers one child's whole education: tuition, meals, uniform and supplies.",
     color: "border-orange-200 bg-orange-50",
     badge: "bg-[#d97706] text-white",
     items: ["Full school tuition", "All meals & uniform", "All stationery", "Extra tuition support"],
@@ -74,7 +63,7 @@ const oneTimeTiers = [
   { amount: "$250", desc: "Equips a classroom with new learning materials" },
   { amount: "$500", desc: "Sponsors a child's full term of education" },
   { amount: "$1,000", desc: "Funds a school computer or science equipment" },
-  { amount: "Custom", desc: "Give any amount — every contribution matters" },
+  { amount: "Custom", desc: "Give any amount you can. It all reaches the children" },
 ];
 
 const corporateTiers = [
@@ -87,7 +76,6 @@ const corporateTiers = [
     name: "Partner",
     amount: "From $2,000 / year",
     perks: ["Logo on website & school banner", "Quarterly impact reports", "Site visit invitation", "Tax receipt documentation"],
-    featured: true,
   },
   {
     name: "Champion",
@@ -139,17 +127,16 @@ export default function DonorsPage() {
             </h1>
 
             <p className="mb-4 max-w-2xl text-lg leading-9 text-white/80">
-              In 2013, the Kenya Excellent Centre & School opened its doors
-              in Likoni, Mombasa — not just as a school, but as a lifeline.
-              Founded with a heart for orphans and children from the most
-              disadvantaged families, KES set an ambitious goal: that 75% of
-              its learners would be fully sponsored.
+              The Kenya Excellent Centre &amp; School opened in Likoni, Mombasa
+              in 2013. It was started for orphans and for children whose
+              families could not raise school fees. The aim from day one was
+              plain: get 75% of our learners onto full sponsorship.
             </p>
             <p className="mb-10 max-w-2xl text-lg leading-9 text-white/80">
               Today, over <span className="font-bold text-white">250 children</span> who
-              would otherwise have no access to education are sitting in
-              classrooms, learning, growing, and dreaming — because of donors
-              like you.
+              would otherwise be sitting at home are in class every morning.
+              Reading, writing, sitting their exams. That is the work of
+              donors like you.
             </p>
 
             <div className="flex flex-wrap gap-4">
@@ -178,9 +165,6 @@ export default function DonorsPage() {
           <div className="grid grid-cols-2 gap-6 md:grid-cols-4">
             {impactStats.map((stat) => (
               <div key={stat.label} className="text-center">
-                <div className="mx-auto mb-3 flex h-12 w-12 items-center justify-center rounded-full bg-[#d97706]/10 text-[#d97706]">
-                  {stat.icon}
-                </div>
                 <p className="text-3xl font-bold text-slate-900 md:text-4xl">{stat.number}</p>
                 <p className="mt-1 text-sm text-slate-500">{stat.label}</p>
               </div>
@@ -197,12 +181,12 @@ export default function DonorsPage() {
               Our Story
             </p>
             <h2 className="hero-title mb-8 text-4xl leading-tight text-slate-900 md:text-5xl">
-              Where It All Began
+              How KES Started
             </h2>
           </div>
 
           <div className="mx-auto grid max-w-5xl gap-10 md:grid-cols-2 md:items-center">
-            <div className="overflow-hidden rounded-3xl shadow-xl">
+            <div className="overflow-hidden rounded-xl shadow-xl">
               <div
                 className="h-[350px] w-full bg-cover bg-center md:h-[450px]"
                 style={{ backgroundImage: "url('/images/hero/kecs-gate.webp')" }}
@@ -210,34 +194,33 @@ export default function DonorsPage() {
             </div>
             <div>
               <p className="mb-5 text-base leading-9 text-slate-600">
-                It started with a simple but radical belief: that a child's
-                circumstances of birth should not determine the ceiling of
-                their future. Director <strong>Mr. Noah Mweruphe</strong> and
-                a team of committed individuals pooled resources to open a
-                school that would serve both fee-paying and sponsored learners
-                side by side.
+                It began with one belief: where a child is born should not
+                decide how far that child goes. Director{" "}
+                <strong>Mr. Noah Mweruphe</strong> and a few colleagues put
+                their own money together and opened a school where fee-paying
+                and sponsored learners would sit in the same classrooms.
               </p>
               <p className="mb-5 text-base leading-9 text-slate-600">
-                They began with just <strong>25 fee-paying students</strong> and
-                <strong> 5 needy children</strong>. No fanfare, no large grants
-                — just determination. Over a decade later, more than
+                They started with <strong>25 fee-paying students</strong> and
+                <strong> 5 needy children</strong>. There were no grants and no
+                launch ceremony. Over a decade later, more than
                 <strong> 250 sponsored children</strong> walk through those
                 gates every morning.
               </p>
               <p className="mb-8 text-base leading-9 text-slate-600">
-                Alumni from KES have gone on to join competitive national
-                schools including <strong>Maranda High School</strong>,
-                <strong> Nyuki School</strong>, <strong>Kwale High</strong>,
-                and <strong>Matuga Girls</strong> — proof that when you invest
-                in a child, the returns are extraordinary.
+                Our alumni have gone on to national schools:{" "}
+                <strong>Maranda High School</strong>,
+                <strong> Nyuki School</strong>, <strong>Kwale High</strong> and{" "}
+                <strong>Matuga Girls</strong>. Those are places the first
+                parents here never expected their children to reach.
               </p>
-              <div className="rounded-2xl border-l-4 border-[#d97706] bg-[#fffaf2] p-5">
+              <div className="rounded-2xl border border-[#d97706]/30 bg-[#fffaf2] p-5">
                 <p className="text-base italic leading-8 text-slate-700">
-                  "Our goal is that 75% of our learners are fully sponsored —
-                  the fortunate and less fortunate, educated together, as equals."
+                  "Our goal is that 75% of our learners are fully sponsored.
+                  The fortunate and the less fortunate, taught together, as equals."
                 </p>
                 <p className="mt-3 text-sm font-semibold text-slate-500">
-                  — Mr. Noah Mweruphe, Director, KES
+                  Mr. Noah Mweruphe, Director, KES
                 </p>
               </div>
             </div>
@@ -256,8 +239,8 @@ export default function DonorsPage() {
               Where Your Money Goes
             </h2>
             <p className="mx-auto mt-4 max-w-xl text-base leading-8 text-white/70">
-              Every dollar donated goes directly to the children. Here is
-              exactly how contributions are used.
+              Every dollar donated goes to the children. This is how it is
+              split.
             </p>
           </div>
 
@@ -289,8 +272,8 @@ export default function DonorsPage() {
               Sponsor a Child
             </h2>
             <p className="mx-auto mt-4 max-w-xl text-base leading-8 text-slate-600">
-              Choose a monthly sponsorship level. You'll receive updates on
-              the child you support through your donor portal.
+              Pick a monthly amount. Updates on the child you support come
+              through your donor portal.
             </p>
           </div>
 
@@ -298,26 +281,17 @@ export default function DonorsPage() {
             {tiers.map((tier) => (
               <div
                 key={tier.name}
-                className={`relative rounded-3xl border-2 p-8 ${tier.color} ${tier.featured ? "ring-2 ring-[#d97706] ring-offset-2" : ""}`}
+                className={`relative rounded-xl border-2 p-8 ${tier.color}`}
               >
-                {tier.featured && (
-                  <div className="absolute -top-4 left-1/2 -translate-x-1/2 rounded-full bg-[#d97706] px-4 py-1 text-xs font-bold uppercase tracking-wider text-white">
-                    Most Popular
-                  </div>
-                )}
-                <div className="mb-5 flex h-14 w-14 items-center justify-center rounded-full bg-[#d97706]/10 text-[#d97706]">
-                  {tier.icon}
-                </div>
                 <span className={`mb-3 inline-block rounded-full px-3 py-1 text-xs font-bold uppercase tracking-wider ${tier.badge}`}>
                   {tier.name}
                 </span>
                 <p className="mb-1 text-3xl font-bold text-slate-900">{tier.amount}</p>
                 <p className="mb-4 text-sm text-slate-400">{tier.amountKes}</p>
                 <p className="mb-6 text-sm leading-7 text-slate-600">{tier.description}</p>
-                <ul className="mb-8 space-y-2">
+                <ul className="mb-8 list-disc space-y-2 pl-5 marker:text-[#d97706]">
                   {tier.items.map((item) => (
-                    <li key={item} className="flex items-center gap-2 text-sm text-slate-700">
-                      <ShieldCheck size={14} className="shrink-0 text-[#d97706]" />
+                    <li key={item} className="text-sm text-slate-700">
                       {item}
                     </li>
                   ))}
@@ -342,7 +316,7 @@ export default function DonorsPage() {
               One-Time Gift
             </p>
             <h2 className="hero-title text-4xl leading-tight text-slate-900 md:text-5xl">
-              Give Once, Impact Forever
+              Make a One-Off Gift
             </h2>
           </div>
           <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
@@ -350,9 +324,9 @@ export default function DonorsPage() {
               <a
                 key={t.amount}
                 href="#contact-director"
-                className="group flex items-center gap-4 rounded-2xl border border-slate-200 bg-white p-6 shadow-sm transition hover:-translate-y-1 hover:border-[#d97706] hover:shadow-md"
+                className="flex items-center gap-4 rounded-2xl border border-slate-200 bg-white p-6 shadow-sm transition hover:border-[#d97706] hover:shadow-md"
               >
-                <span className="text-2xl font-bold text-[#d97706] group-hover:scale-110 transition-transform">
+                <span className="text-2xl font-bold text-[#d97706]">
                   {t.amount}
                 </span>
                 <p className="text-sm leading-6 text-slate-600">{t.desc}</p>
@@ -374,27 +348,26 @@ export default function DonorsPage() {
                 Donate School Supplies & Materials
               </h2>
               <p className="mb-6 text-base leading-8 text-slate-600">
-                Can't give cash? You can donate physical items that go directly
-                into the hands of our children. We accept new or gently used
-                supplies. Contact the director to arrange shipping or drop-off.
+                Not able to send money? Send items instead. We take new or
+                gently used supplies, and they go straight to the learners.
+                Talk to the director about shipping or a drop-off.
               </p>
-              <ul className="grid grid-cols-2 gap-3">
+              <ul className="grid list-disc grid-cols-2 gap-3 pl-5 marker:text-[#d97706]">
                 {supplies.map((s) => (
-                  <li key={s} className="flex items-center gap-2 text-sm text-slate-700">
-                    <ShieldCheck size={14} className="shrink-0 text-[#d97706]" />
+                  <li key={s} className="text-sm text-slate-700">
                     {s}
                   </li>
                 ))}
               </ul>
             </div>
-            <div className="rounded-3xl border border-slate-200 bg-[#fffaf2] p-8">
+            <div className="rounded-xl border border-slate-200 bg-[#fffaf2] p-8">
               <p className="mb-4 font-semibold text-slate-900">To donate supplies:</p>
               <ol className="space-y-4">
                 {[
                   "Contact Director Mr. Noah Mweruphe using the form below",
-                  "Agree on the items needed and shipping/delivery method",
+                  "Agree on what is needed and how it will be delivered",
                   "Ship to our address in Likoni, Mombasa or arrange with a local contact",
-                  "Receive a confirmation and thank-you from the school",
+                  "We confirm receipt and write back to thank you",
                 ].map((step, i) => (
                   <li key={i} className="flex items-start gap-3 text-sm leading-7 text-slate-600">
                     <span className="flex h-6 w-6 shrink-0 items-center justify-center rounded-full bg-[#d97706] text-xs font-bold text-white">
@@ -427,8 +400,8 @@ export default function DonorsPage() {
               Corporate & Organisation Partnership
             </h2>
             <p className="mx-auto mt-4 max-w-xl text-base leading-8 text-white/70">
-              Partner with KES as part of your CSR programme. Make a measurable
-              difference in children's lives while gaining recognition.
+              Partner with KES through your CSR programme. You get reports on
+              exactly what your money paid for, and we name you for it.
             </p>
           </div>
 
@@ -436,23 +409,13 @@ export default function DonorsPage() {
             {corporateTiers.map((tier) => (
               <div
                 key={tier.name}
-                className={`rounded-3xl border p-8 ${
-                  tier.featured
-                    ? "border-[#d97706] bg-[#d97706]/10"
-                    : "border-white/10 bg-white/5"
-                }`}
+                className="rounded-xl border border-white/10 bg-white/5 p-8"
               >
-                {tier.featured && (
-                  <span className="mb-4 inline-block rounded-full bg-[#d97706] px-3 py-1 text-xs font-bold uppercase tracking-wider text-white">
-                    Recommended
-                  </span>
-                )}
                 <p className="mb-1 text-2xl font-bold text-white">{tier.name}</p>
                 <p className="mb-6 text-[#d97706]">{tier.amount}</p>
-                <ul className="space-y-3">
+                <ul className="list-disc space-y-3 pl-5 marker:text-[#d97706]">
                   {tier.perks.map((perk) => (
-                    <li key={perk} className="flex items-start gap-2 text-sm leading-6 text-white/75">
-                      <ShieldCheck size={14} className="mt-0.5 shrink-0 text-[#d97706]" />
+                    <li key={perk} className="text-sm leading-6 text-white/75">
                       {perk}
                     </li>
                   ))}
@@ -472,18 +435,15 @@ export default function DonorsPage() {
       {/* ── Donor Portal CTA ── */}
       <section className="bg-[#fffaf2] py-16">
         <div className="mx-auto max-w-[1400px] px-4 lg:px-6">
-          <div className="mx-auto max-w-3xl overflow-hidden rounded-3xl bg-[#0f172a] text-white">
+          <div className="mx-auto max-w-3xl overflow-hidden rounded-xl bg-[#0f172a] text-white">
             <div className="p-8 md:p-12">
-              <div className="mb-4 flex h-14 w-14 items-center justify-center rounded-full bg-[#d97706]/20 text-[#d97706]">
-                <Building2 size={28} />
-              </div>
               <h2 className="hero-title mb-4 text-3xl leading-tight md:text-4xl">
                 Already a Donor? Access Your Portal
               </h2>
               <p className="mb-8 max-w-xl text-base leading-8 text-white/75">
-                Log in to your donor portal to see updates on the children you
-                support, view your donation history, read school news, and send
-                messages directly to the director.
+                Sign in to see how the children you support are doing. Your
+                donation history and school news are there too, and you can
+                message the director from inside the portal.
               </p>
               <Link
                 href="/donors/portal"
@@ -509,10 +469,10 @@ export default function DonorsPage() {
                 Contact the Director
               </h2>
               <p className="mb-8 text-base leading-8 text-slate-600">
-                All donation arrangements are handled personally by
-                Director <strong>Mr. Noah Mweruphe</strong>. Fill in the form
-                and he will respond within 48 hours to discuss how you can
-                best support the children of KES.
+                Director <strong>Mr. Noah Mweruphe</strong> handles every
+                donation arrangement himself. Fill in the form and he will
+                reply within 48 hours to talk through how you would like to
+                help.
               </p>
 
               <div className="space-y-5">
@@ -551,10 +511,10 @@ export default function DonorsPage() {
                 <div className="rounded-2xl border border-slate-200 bg-[#fffaf2] p-5">
                   <p className="mb-1 font-semibold text-slate-900">Trust & Transparency</p>
                   <p className="text-sm leading-7 text-slate-600">
-                    KES operates with full commitment to child protection,
-                    safeguarding, discipline policy, and health & safety
-                    standards. All donations are used directly for the
-                    children's education and welfare.
+                    KES keeps written policies on child protection,
+                    safeguarding, discipline and health &amp; safety. Donations
+                    are spent on the children&apos;s schooling and welfare,
+                    nothing else.
                   </p>
                 </div>
               </div>

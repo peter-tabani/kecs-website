@@ -3,6 +3,7 @@
 import { useState } from "react";
 import Link from "next/link";
 import { ArrowRight } from "lucide-react";
+import SwipeRow from "@/components/ui/SwipeRow";
 
 const programs = [
   {
@@ -12,7 +13,7 @@ const programs = [
     image: "/images/programs/ecde.jpg",
     fallbackColor: "from-amber-600 to-orange-500",
     description:
-      "Early childhood development focused on play-based learning, literacy, numeracy, confidence, and social skills. We welcome children from age 3 in a warm, stimulating environment that builds a lifelong love for learning.",
+      "Play-based learning that covers early reading, numbers and social skills. We take children from age 3. Small classes, patient teachers, and a settled routine that helps a child get used to school.",
     details: ["Ages 3 and above", "PP1 & PP2", "CBC Curriculum"],
   },
   {
@@ -22,7 +23,7 @@ const programs = [
     image: "/images/programs/primary.jpg",
     fallbackColor: "from-blue-700 to-blue-500",
     description:
-      "A balanced CBC-based programme emphasising Mathematics, Science, Social Studies, Communication, and character formation. Learners are guided to grow academically and develop strong moral values.",
+      "The full CBC programme: Mathematics, Science, Social Studies and Communication, taught alongside the character lessons we take seriously here. Pupils sit KPSEA at the end of Grade 6.",
     details: ["Grade 1 – 6", "CBC Curriculum", "KPSEA Assessment"],
   },
   {
@@ -32,7 +33,7 @@ const programs = [
     image: "/images/programs/junior.jpg",
     fallbackColor: "from-slate-700 to-slate-600",
     description:
-      "Learner-centred preparation developing critical thinking, creativity, and responsibility. Assessed through the Kenya Junior Secondary Education Assessment (KJSEA), our alumni have joined top national schools.",
+      "Grade 7 to 9, ending with the Kenya Junior Secondary Education Assessment (KJSEA). Learners take on more responsibility for their own work here, and our leavers have gone on to national schools.",
     details: ["Grade 7 – 9", "CBC Curriculum", "KJSEA Assessment"],
   },
   {
@@ -42,7 +43,7 @@ const programs = [
     image: "/images/programs/islamic.jpg",
     fallbackColor: "from-emerald-700 to-teal-600",
     description:
-      "An integrated Madrasa programme offering Islamic studies alongside the standard CBC curriculum. Muslim learners receive a holistic education that nurtures both their academic and spiritual growth.",
+      "A Madrasa programme that runs alongside the normal CBC timetable, so Muslim learners can do their Islamic studies without leaving school or falling behind in class.",
     details: ["All levels", "Integrated with CBC", "Islamic Studies"],
   },
 ];
@@ -69,12 +70,12 @@ function FlipCard({ program }: { program: typeof programs[0] }) {
 
         {/* ── FRONT ── */}
         <div
-          className="absolute inset-0 overflow-hidden rounded-3xl shadow-lg"
+          className="absolute inset-0 overflow-hidden rounded-xl shadow-md"
           style={{ backfaceVisibility: "hidden" }}
         >
           {/* Background image */}
           <div
-            className="absolute inset-0 bg-cover bg-center transition-transform duration-700 group-hover:scale-105"
+            className="absolute inset-0 bg-cover bg-center transition-opacity duration-300 group-hover:opacity-90"
             style={{ backgroundImage: `url('${program.image}')` }}
           />
           {/* Fallback gradient if no image */}
@@ -86,7 +87,7 @@ function FlipCard({ program }: { program: typeof programs[0] }) {
           <div className="absolute inset-0 flex flex-col justify-between p-7">
             {/* Top: emoji badge */}
             <div className="flex items-start justify-between">
-              <span className="rounded-2xl bg-white/20 px-3 py-1.5 text-xs font-bold uppercase tracking-wider text-white backdrop-blur-sm">
+              <span className="rounded-md bg-black/60 px-3 py-1.5 text-xs font-bold uppercase tracking-wider text-white">
                 {program.subtitle}
               </span>
               
@@ -98,9 +99,8 @@ function FlipCard({ program }: { program: typeof programs[0] }) {
                 {program.title}
               </h3>
               <p className="flex items-center gap-1.5 text-xs font-semibold text-white/60">
-                <span className="hidden md:inline">Hover</span>
-                <span className="md:hidden">Tap</span>
-                to learn more
+                <span className="hidden md:inline">Hover to learn more</span>
+                <span className="md:hidden">Tap to learn more</span>
                 <ArrowRight size={12} />
               </p>
             </div>
@@ -109,7 +109,7 @@ function FlipCard({ program }: { program: typeof programs[0] }) {
 
         {/* ── BACK ── */}
         <div
-          className="absolute inset-0 overflow-hidden rounded-3xl bg-[#0f172a] p-7 shadow-lg"
+          className="absolute inset-0 overflow-hidden rounded-xl bg-[#0f172a] p-7 shadow-md"
           style={{
             backfaceVisibility: "hidden",
             transform: "rotateY(180deg)",
@@ -155,29 +155,28 @@ function FlipCard({ program }: { program: typeof programs[0] }) {
 
 export default function Programs() {
   return (
-    <section id="programs" className="bg-[#fffaf2] py-20">
+    <section id="programs" className="bg-[#fffaf2] py-16 lg:py-20">
       <div className="mx-auto max-w-[1400px] px-4 lg:px-6">
 
         {/* Header */}
-        <div className="mb-14 text-center">
+        <div className="mb-10 text-center lg:mb-14">
           <p className="mb-3 text-sm font-bold uppercase tracking-[0.3em] text-[#d97706]">
-            Our Learning Path — CBC Curriculum
+            Our Learning Path, CBC Curriculum
           </p>
           <h2 className="hero-title text-4xl leading-tight text-slate-900 md:text-5xl">
             Programs for Every Stage of Growth
           </h2>
           <p className="mx-auto mt-4 max-w-xl text-base leading-8 text-slate-500">
-            From early childhood through Junior Secondary — tap or hover each
-            card to discover what we offer.
+            From pre-primary up to Grade 9. Tap any card to see what it covers.
           </p>
         </div>
 
-        {/* Flip Cards Grid */}
-        <div className="grid gap-6 sm:grid-cols-2 xl:grid-cols-4">
+        {/* Flip Cards */}
+        <SwipeRow desktopGrid="lg:grid-cols-4">
           {programs.map((program) => (
             <FlipCard key={program.id} program={program} />
           ))}
-        </div>
+        </SwipeRow>
       </div>
     </section>
   );
