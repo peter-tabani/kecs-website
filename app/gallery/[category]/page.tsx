@@ -17,7 +17,11 @@ export async function generateMetadata({
 }) {
   const { category } = await params;
   const categoryData = getCategoryBySlug(category);
-  return { title: `${categoryData?.label ?? "Gallery"} | The Kenya Excellent Centre and School` };
+  return {
+    title: categoryData?.label ?? "Gallery",
+    description: categoryData?.blurb,
+    alternates: { canonical: `/gallery/${category}` },
+  };
 }
 
 export default async function CategoryGalleryPage({

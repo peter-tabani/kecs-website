@@ -6,9 +6,10 @@ import AdmissionsForm from "@/components/sections/AdmissionsForm";
 import { ArrowRight, MessageCircle } from "lucide-react";
 
 export const metadata = {
-  title: "Admissions – Kenya Excellent Centre & School",
+  title: "Admissions",
   description:
     "Apply for admission at KES – Likoni, Mombasa. Open for ECDE, Primary, and Junior Secondary learners.",
+  alternates: { canonical: "/admissions" },
 };
 
 const requirements = [

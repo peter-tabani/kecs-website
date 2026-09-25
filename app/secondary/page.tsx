@@ -6,8 +6,9 @@ import Link from "next/link";
 import { Download, ArrowRight, MessageCircle } from "lucide-react";
 
 export const metadata = {
-  title: "Junior Secondary – Kenya Excellent Centre & School",
+  title: "Junior Secondary School",
   description: "Junior Secondary School (Grade 7–9) at KES, Likoni Mombasa. CBC curriculum. KJSEA. Download fee structure.",
+  alternates: { canonical: "/secondary" },
 };
 
 export default function SecondaryPage() {

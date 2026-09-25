@@ -5,7 +5,8 @@ import Footer from "@/components/layout/Footer";
 import SectionBanner from "@/components/ui/SectionBanner";
 
 export const metadata = {
-  title: "Privacy Policy | The Kenya Excellent Centre and School",
+  title: "Privacy Policy",
+  alternates: { canonical: "/privacy" },
 };
 
 export default function PrivacyPage() {

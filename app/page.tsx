@@ -1,3 +1,4 @@
+import type { Metadata } from "next";
 import TopBar from "@/components/layout/TopBar";
 import Header from "@/components/layout/Header";
 import Navbar from "@/components/layout/Navbar";
@@ -10,6 +11,10 @@ import SectionBanner from "@/components/ui/SectionBanner";
 import SwipeRow from "@/components/ui/SwipeRow";
 import Link from "next/link";
 import { ArrowRight } from "lucide-react";
+
+export const metadata: Metadata = {
+  alternates: { canonical: "/" },
+};
 
 export default function HomePage() {
   return (

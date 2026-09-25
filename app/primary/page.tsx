@@ -6,8 +6,9 @@ import Link from "next/link";
 import { Download, ArrowRight, MessageCircle } from "lucide-react";
 
 export const metadata = {
-  title: "Primary School – Kenya Excellent Centre & School",
+  title: "Primary School",
   description: "Primary School (Grade 1–6) at KES, Likoni Mombasa. CBC curriculum. Download fee structure.",
+  alternates: { canonical: "/primary" },
 };
 
 export default function PrimaryPage() {
